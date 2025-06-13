@@ -1,7 +1,7 @@
 class User {
     private String userId;
     private int pin;
-    private Account account;
+    private Account account;//user "HAS-A" account
 
     //constructor
     User(String userId, int pin, Account account){
