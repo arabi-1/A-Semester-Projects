@@ -1,6 +1,6 @@
 import java.util.*;
 class ATM {
-    private BankDatabase bankDatabase;
+    private BankDatabase bankDatabase;//atm "has-a" bankDatabase
     private User currentUser;
 
     ATM(BankDatabase db){
