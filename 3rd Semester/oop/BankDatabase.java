@@ -1,8 +1,22 @@
-import java.time.LocalDateTime;
-abstract class Transactions{
-    private LocalDateTime date;
-    private double amount;
+import java.util.ArrayList;
 
-    //details Method
-    public abstract String getDetails(); 
+class BankDatabase {
+    ArrayList<User> users=new ArrayList<>();
+
+    public User authenticateUser(String userId, int pin){
+        for(User u: users){
+            if(u.getUserId().equals(userId)&& u.validatePin(pin)){
+                if(u.validatePin(pin)){
+                    return u;
+                }
+            }
+            
+        }
+        return null;//if no match is found we will reuturn null 
+
+    }
+    public ArrayList<User> getUsers() {
+    return users;
+}
+
 }
