@@ -2,7 +2,7 @@ import java.util.*;
 class Account{
  private String accountNumber;
  private double balance;
- private ArrayList<Transaction> transaction=new ArrayList<>();
+ private ArrayList<Transaction> transaction=new ArrayList<>();//composition, Account owns the list of transaction objects. Without Account there will be no transactions
 
  //Method to get balance/check balance
  public double getBalance(){

@@ -74,14 +74,15 @@ class Transfer extends Transaction{
             status = false;
         }
         else {
-            ArrayList<User> users = BankDatabase.getUsers();    //imports all users from BankDatabase
+            BankDatabase bankdb = new BankDatabase();
+            ArrayList<User> users = bankdb.getUsers();    //imports all users from BankDatabase
             Account receiver;   //temporary variable to make code more readable
 
             for (int i = 0, size = users.size(); i < size; i++){    //itterates through the arrayList of users and checks if receiving account exists in database
                 receiver = users.get(i).getAccount();
                 if (receiver.getAccountNumber().equals(accountNumber)) {    //account exists
                     u.getAccount().setBalance(u.getAccount().getBalance() - am);       //balance subtracted from users account
-                    receiver.setBalance(receiver.setBalance() + am);        //balance added to the receiving account (transfer success)
+                    receiver.setBalance(receiver.getBalance() + am);        //balance added to the receiving account (transfer success)
 
                     date = LocalDateTime.now();
                     amount = am;
