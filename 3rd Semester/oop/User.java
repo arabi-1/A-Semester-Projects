@@ -4,6 +4,9 @@ class User {
     private Account account;//user "HAS-A" account
 
     //constructor
+    User(){
+    }
+
     User(String userId, int pin, Account account){
         this.userId=userId;
         this.pin=pin;

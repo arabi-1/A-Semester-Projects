@@ -3,6 +3,22 @@ class ATM {
     private BankDatabase bankDatabase;//atm "has-a" bankDatabase
     private User currentUser;
 
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
+
+    public BankDatabase getBankDatabase() {
+        return bankDatabase;
+    }
+
+    public void setBankDatabase(BankDatabase bankDatabase) {
+        this.bankDatabase = bankDatabase;
+    }
+
     ATM(BankDatabase db){
         this.bankDatabase=db;
     }
@@ -42,7 +58,7 @@ class ATM {
             sc.nextLine();
             System.out.println("Enter account number of Recipient: ");
             String accNum=sc.nextLine();
-            t = new Transfer(tamt, currentUser, accNum, bankDatabase);
+            t = new Transfer(tamt, currentUser, accNum);
             break;
 
             case 3:
