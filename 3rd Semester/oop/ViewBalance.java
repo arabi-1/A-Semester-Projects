@@ -2,17 +2,16 @@ import java.awt.*;
 import javax.swing.*;
 
 
-class TransactionSuccessful extends JFrame {
+class ViewBal extends JFrame {
+    ViewBal(ATM atm) {
 
-    TransactionSuccessful() {
-        
         JPanel p1 = new JPanel();
-        p1.add(new JLabel("Transaction Succesful."));
+        p1.add(new JLabel("Balance: " +atm.getCurrentUser().getAccount().getBalance()));
 
         setLayout(new BorderLayout());
         add(p1, BorderLayout.CENTER);
 
-        setTitle("Withdraw Cash");
+        setTitle("View Balance");
         setSize(300,150);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

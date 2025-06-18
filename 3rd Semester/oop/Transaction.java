@@ -124,6 +124,10 @@ class Payment extends Transaction {
         }
     }
 
+    public int getAm() {
+        return am;
+    }
+
     @Override
     public String getDetails() {
         return "Date: " +date +"\nAmount: " +amount +"\nType: " +type +"\nInvoice Number: " +invoice;

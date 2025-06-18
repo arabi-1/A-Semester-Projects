@@ -12,6 +12,14 @@ class Account{
         this.balance = balance;
     }
 
+   public ArrayList<Transaction> getTransaction() {
+      return transaction;
+   }
+
+    public void setTransaction(ArrayList<Transaction> transaction) {
+       this.transaction = transaction;
+    }
+
    //Method to get balance/check balance
    public double getBalance(){
       return balance;

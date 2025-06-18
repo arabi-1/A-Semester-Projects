@@ -63,16 +63,16 @@ class Menu extends JFrame {
                 WithdrawMenu W1 = new WithdrawMenu(atm);
             }
             else if(a.getSource() == transfer) {
-
+                TransferMenu T1 = new TransferMenu(atm);
             }
             else if (a.getSource() == payment) {
-
+                PaymentMenu P1 = new PaymentMenu(atm);
             }
             else if (a.getSource() == viewHist) {
-
+                ViewHist H1 = new ViewHist(atm);
             }
             else {
-
+                ViewBal V1 = new ViewBal(atm);
             }           
         }
     }

@@ -14,7 +14,7 @@ class TransactionFailed extends JFrame {
 
         setTitle("Withdraw Cash");
         setSize(300,150);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
     }

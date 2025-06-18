@@ -5,39 +5,46 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 
-class WithdrawMenu extends JFrame {
+class TransferMenu extends JFrame {
     private JPanel p1;
     private JPanel p2;
 
-    private JButton withdraw;
+    private JButton transfer;
     private JLabel l1;
+    private JLabel l2;
     private JTextField t1;
+    private JTextField t2;
     private ATM atm;
 
-    WithdrawMenu(ATM atm) {
+    TransferMenu(ATM atm) {
         this.atm = atm;
-        withdraw = new JButton("Withdraw");
+        transfer = new JButton("Transfer");
         l1 = new JLabel("Amount");
         t1 = new JTextField(8);
 
+        l2 = new JLabel("Account No");
+        t2 = new JTextField(8);
+
         myHandler handler = new myHandler();
 
-        withdraw.addActionListener(handler);
+        transfer.addActionListener(handler);
         
         p1 = new JPanel();
-        p1.setLayout(new GridLayout(1,2));
+        p1.setLayout(new GridLayout(2,2));
         p1.add(l1);
         p1.add (t1);
+        p1.add(l2);
+        p1.add(t2);
         
         p2 = new JPanel();
         p2.setLayout(new GridLayout(1, 1));
-        p2.add(withdraw);
+        p2.add(transfer);
 
         setLayout(new GridLayout(2, 1));
         add(p1);
         add(p2);
 
-        setTitle("Withdraw Cash");
+        setTitle("Transfer Cash");
         setSize(300,150);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -47,7 +54,8 @@ class WithdrawMenu extends JFrame {
     class myHandler implements ActionListener {
         public void actionPerformed(ActionEvent a) {
             setVisible(false);
-            Transaction trans = new Withdraw(Double.valueOf(t1.getText()), atm.getCurrentUser());
+
+            Transaction trans = new Transfer(Double.valueOf(t1.getText()), atm.getCurrentUser(), t2.getText());
 
             if (!trans.getStatus()) {
                 TransactionFailed TF = new TransactionFailed();
