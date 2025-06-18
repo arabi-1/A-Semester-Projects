@@ -58,8 +58,9 @@ class Menu extends JFrame {
 
     class myHandler implements ActionListener {
         public void actionPerformed(ActionEvent a) {
+            setVisible(false);
             if (a.getSource() == withdraw) {
-                
+                WithdrawMenu W1 = new WithdrawMenu(atm);
             }
             else if(a.getSource() == transfer) {
 
