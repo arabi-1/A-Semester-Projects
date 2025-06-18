@@ -3,7 +3,9 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 class ViewHist extends JFrame {
+
     ViewHist(ATM atm) {
+
         ArrayList<Transaction> transactions = atm.getCurrentUser().getAccount().getTransaction();
 
         JPanel p1 = new JPanel();
@@ -18,5 +20,6 @@ class ViewHist extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+
     }
 }

@@ -54,7 +54,7 @@ class SignIn extends JFrame {
                 User u1 = atm.getBankDatabase().authenticateUser(t1.getText(), Integer.valueOf(t2.getText()));
                 if (u1 != null) {
                     atm.setCurrentUser(u1);
-                    setVisible(false);
+                    dispose();
                     Menu ME = new Menu(atm);
                 }
                 else if (u1 == null) {
